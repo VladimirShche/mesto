@@ -1,0 +1,8 @@
+.footer {
+    outline: red solid 1px;
+    margin: 0;
+    padding: 0;
+    min-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+}
