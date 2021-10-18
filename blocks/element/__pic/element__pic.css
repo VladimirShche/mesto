@@ -1,0 +1,8 @@
+.element__pic {
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 282px;
+    height: 282px;
+    object-fit: cover;
+}
