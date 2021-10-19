@@ -1,6 +1,5 @@
 .profile {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 1fr);
-    outline: red solid 1px;
+    grid-template-columns:  1fr min-content;
 }

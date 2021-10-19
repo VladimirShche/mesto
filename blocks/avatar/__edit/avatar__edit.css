@@ -1,0 +1,9 @@
+.avatar__edit {
+    margin: 0;
+    background-color: black;
+    border-color: #fff solid 1px;
+    width: 24px;
+    height: 24px;
+    margin-top: 15px;
+    margin-left: 18px;
+}

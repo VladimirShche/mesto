@@ -1,0 +1,9 @@
+.avatar__add {
+    background-color: #000;
+    border: white solid 2px;
+    width: 150px;
+    height: 50px;
+    margin: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
