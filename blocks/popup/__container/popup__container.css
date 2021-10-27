@@ -1,3 +1,7 @@
 .popup__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: min-content;
+    gap: 8px;
+    justify-content: center;
 }
