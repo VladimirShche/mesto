@@ -4,3 +4,11 @@
     grid-template-columns: repeat(3, max-content);
     grid-template-rows: min-content;
 }
+
+@media (max-width: 767px) {
+    .profile__avatar {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, min-content);
+        justify-content: center;
+    }
+}

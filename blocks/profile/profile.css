@@ -2,5 +2,11 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns:  1fr min-content;
+}
 
+@media (max-width: 767px) {
+    .profile {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, min-content);
+    }
 }

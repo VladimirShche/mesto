@@ -9,5 +9,6 @@
 @media (max-width: 767px) {
     .header__line {
         margin-top: 31,6px;
+        min-width: 880px;
     }
 }

@@ -7,3 +7,7 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+
+.profile__add:hover {
+    opacity: 0.5;
+}

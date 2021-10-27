@@ -6,9 +6,8 @@
     width: 32px;
     height: 32px;
     margin-top: 155px;
-    /* position: absolute;
-    width: 32px;
-    height: 32px;
-    left: 863px;
-    top: 155px; */
+}
+
+.popup__close:hover {
+    opacity: 0.6;
 }
