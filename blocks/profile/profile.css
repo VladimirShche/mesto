@@ -9,9 +9,8 @@
 @media (max-width: 767px) {
     .profile {
         margin-top: 42px;
-        grid-template-columns: 1fr;
+        grid-template-columns: min-content;
         grid-template-rows: repeat(2, min-content);
-        margin-left: auto;
-        margin-right: auto;
+        justify-content: center;
     }
 }

@@ -9,7 +9,7 @@
 
 @media (max-width: 767px) {
     .popup__container {    
-        grid-template-columns: 1fr;
+        grid-template-columns: min-content;
         grid-template-rows: min-content min-content;
         gap: 16px;
     }

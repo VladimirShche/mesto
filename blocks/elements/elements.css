@@ -11,9 +11,10 @@
 @media (max-width: 767px) {
     .elements {
         column-gap: 20px;
-        grid-template-columns: 1fr;
+        grid-template-columns: min-content;
         grid-template-rows: min-content;
         margin-left: 19px;
         margin-right: 19px;
+        justify-content: center;
     }
 }
