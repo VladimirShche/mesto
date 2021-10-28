@@ -1,13 +1,15 @@
 .popup__line {
     margin: 0;
     padding: 0;
-    min-width: 358px;
+    max-width: 358px;
     opacity: 0.2;
     border: 1px solid #000000;
 }
 
 @media (max-width: 767px) {
     .popup__line {
-        min-width: 282px;
+        max-width: 238px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

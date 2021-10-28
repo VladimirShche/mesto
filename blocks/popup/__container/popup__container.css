@@ -4,7 +4,7 @@
     grid-template-rows: min-content min-content;
     gap: 8px;
     justify-content: center;
-    margin-top: 195px;
+    margin-top: 155px;
 }
 
 @media (max-width: 767px) {
@@ -12,5 +12,6 @@
         grid-template-columns: min-content;
         grid-template-rows: min-content min-content;
         gap: 16px;
+        margin-top: 87px;
     }
 }

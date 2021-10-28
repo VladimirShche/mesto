@@ -1,7 +1,7 @@
 .popup__description {
     margin: 0;
     padding: 0;
-    min-width: 358px;
+    max-width: 358px;
     margin-top: 30px;
     border: none;
     height: 27px;
@@ -9,6 +9,7 @@
 
 @media (max-width: 767px) {
     .popup__description {
-        min-width: 282px;
+        min-width: 238px;
+        margin-left: 22px;
     }
 }

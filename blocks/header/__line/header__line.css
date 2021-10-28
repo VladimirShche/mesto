@@ -8,7 +8,7 @@
 
 @media (max-width: 767px) {
     .header__line {
-        margin-top: 31,6px;
+        margin-top: 32px;
         min-width: 320px;
     }
 }

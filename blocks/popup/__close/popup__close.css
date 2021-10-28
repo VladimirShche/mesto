@@ -20,5 +20,6 @@
         height: 20px;
         grid-row: 1/2;
         justify-self: flex-end;
+        padding: 0;
     }
 }
