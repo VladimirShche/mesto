@@ -7,8 +7,9 @@
 
 @media (max-width: 767px) {
     .profile__avatar {
-        grid-template-columns: 1fr;
+        grid-template-columns: min-content;
         grid-template-rows: repeat(2, min-content);
-        justify-content: center;
+        margin-left: 19px;
+        margin-right: 19px;
     }
 }

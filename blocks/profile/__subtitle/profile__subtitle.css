@@ -10,3 +10,15 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+@media (max-width: 767px) {
+    .profile__subtitle {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        margin-top: 14px;
+        grid-column: 1/3;
+    }
+}

@@ -1,4 +1,4 @@
-.profile__name{
+.profile__name {
     margin: 0;
     max-width: 294px;
     font-style: normal;
@@ -9,4 +9,16 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .profile__name {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 27px;
+        line-height: 33px;
+        text-align: center;
+        margin-left: 46px;
+        min-width: 189px;
+    }
 }

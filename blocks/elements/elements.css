@@ -12,8 +12,8 @@
     .elements {
         column-gap: 20px;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        margin-left: 9px;
-        margin-right: 9px;
+        grid-template-rows: min-content;
+        margin-left: 19px;
+        margin-right: 19px;
     }
 }
