@@ -9,3 +9,10 @@
     margin-left: 36px;
     margin-right: auto;
 }
+
+@media (max-width: 767px) {
+    .popup__title{
+        font-size: 18px;
+        line-height: 22px;
+    }
+}

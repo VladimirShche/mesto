@@ -5,3 +5,9 @@
     border: none;
     height: 27px;
 }
+
+@media (max-width: 767px) {
+    .popup__name {
+        min-width: 282px;
+    }
+}

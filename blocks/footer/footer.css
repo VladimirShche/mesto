@@ -6,3 +6,11 @@
     margin-right: auto;
     margin-top: 67px;
 }
+
+@media (max-width: 767px) {
+    .footer {
+        margin-top: 40px;
+        margin-left: 19px;
+        margin-right: 19px;
+    }
+}

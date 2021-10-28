@@ -18,3 +18,11 @@
 .popup__submit:hover {
     opacity: 0.8;
 }
+
+@media (max-width: 767px) {
+    .popup__submit {
+        min-width: 282px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

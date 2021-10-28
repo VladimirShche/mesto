@@ -1,7 +1,16 @@
 .popup__container {
     display: grid;
-    grid-template-columns: min-content min-content;
-    grid-template-rows: min-content;
+    grid-template-columns: min-content;
+    grid-template-rows: min-content min-content;
     gap: 8px;
     justify-content: center;
+    margin-top: 195px;
+}
+
+@media (max-width: 767px) {
+    .popup__container {    
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content;
+        gap: 16px;
+    }
 }
