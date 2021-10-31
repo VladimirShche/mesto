@@ -1,4 +1,5 @@
 .elements {
+    max-width: 880px;
     margin: 0;
     margin-top: 51px;
     row-gap: 20px;
@@ -6,6 +7,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1023px) {
+    .elements {
+        column-gap: 20px;
+        grid-template-columns: min-content min-content;
+        grid-template-rows: min-content;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 767px) {
