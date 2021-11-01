@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 1fr min-content;
     grid-template-rows: min-content;
+    align-items: center;
     margin-top: 25px;
     margin-left: 21px;
     margin-bottom: 31px;

@@ -6,7 +6,11 @@
     padding: 0;
     margin-top: auto;
     margin-bottom: auto;
-    border: 2px solid #FFFFFF;
+    background-image: url(../../../images/add_button.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 22px;
+    outline: 2px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 2px;
 }
@@ -21,5 +25,6 @@
         margin-top: 36px;
         margin-left: 19px;
         margin-right: 19px;
+        background-size: 16px 16px;
     }
 }
