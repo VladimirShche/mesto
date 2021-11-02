@@ -8,6 +8,7 @@
     grid-row: 1/2;
     justify-self: flex-end;
     padding-left: 40px;
+    cursor: pointer;
 }
 
 .popup__close:hover {

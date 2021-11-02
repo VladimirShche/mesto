@@ -1,0 +1,5 @@
+.element__like-active {
+    background-image: url(../../../images/Vector_like.svg);
+    background-size: contain;
+    fill: black;
+}
