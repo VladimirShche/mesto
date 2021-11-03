@@ -5,13 +5,7 @@
     height: 27px;
     border: none;
     margin-left: 36px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
     margin-top: 54px;
-    border-bottom: 1px solid #000000;
-    opacity: 0.2;
 }
 
 @media (max-width: 767px) {
