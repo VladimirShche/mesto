@@ -17,7 +17,7 @@
 }
 
 .profile__add:hover {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 @media (max-width: 767px) {

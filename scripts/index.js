@@ -5,20 +5,18 @@ let nameInput = document.querySelector('.popup__name');
 let jobInput = document.querySelector('.popup__description');
 let nameProf = document.querySelector('.profile__name');
 let jobProf = document.querySelector('.profile__subtitle');
-const popupElement = document.querySelector('.popup');
-const popupCloseButtonElement = popupElement.querySelector('.popup__close');
-const popupOpenButtonElement = document.querySelector('.profile__edit');
-
-const openPopup = function() {
+let popupElement = document.querySelector('.popup');
+let popupCloseButtonElement = popupElement.querySelector('.popup__close');
+let popupOpenButtonElement = document.querySelector('.profile__edit');
+let openPopup = function() {
     popupElement.classList.add('popup__is-opened');
+    nameInput.value = nameProf.textContent;
+    jobInput.value = jobProf.textContent;
 };
-
-const closePopup = function() {
+let closePopup = function() {
     popupElement.classList.remove('popup__is-opened');
 };
 
-popupOpenButtonElement.addEventListener('click', openPopup);
-popupCloseButtonElement.addEventListener('click', closePopup);
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
@@ -26,8 +24,10 @@ function formSubmitHandler (evt) {
     evt.preventDefault(); 
     nameProf.textContent = nameInput.value;
     jobProf.textContent = jobInput.value;
+    closePopup();
 }
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler);
-formElement.addEventListener('submit', closePopup);
+popupOpenButtonElement.addEventListener('click', openPopup);
+popupCloseButtonElement.addEventListener('click', closePopup);

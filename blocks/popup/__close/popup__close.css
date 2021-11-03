@@ -9,6 +9,7 @@
     justify-self: flex-end;
     padding-left: 40px;
     cursor: pointer;
+    background-image: url(../../../images/Close_Icon.svg);
 }
 
 .popup__close:hover {
@@ -20,7 +21,6 @@
         width: 20px;
         height: 20px;
         grid-row: 1/2;
-        justify-self: flex-end;
         padding: 0;
     }
 }
