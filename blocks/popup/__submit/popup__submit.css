@@ -1,6 +1,7 @@
 .popup__submit {
     margin: 0;
     padding: 0;
+    border: none;
     background: #000000;
     border-radius: 2px;
     min-width: 358px;

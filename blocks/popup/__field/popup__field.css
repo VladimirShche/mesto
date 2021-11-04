@@ -1,8 +1,15 @@
 .popup__field {
     border-bottom: 1px solid #000000;
-    /* opacity: 0.2; */
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
+    width: 358px;
+    height: 27px;
+}
+
+@media (max-width: 767px) {
+    .popup__field {
+        max-width: 238px;
+    }
 }

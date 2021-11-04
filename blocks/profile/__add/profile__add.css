@@ -4,6 +4,7 @@
     height: 50px;
     margin: 0;
     padding: 0;
+    border: none;
     margin-top: auto;
     margin-bottom: auto;
     background-image: url(../../../images/add_button.svg);

@@ -2,11 +2,15 @@
     margin: 0;
     padding: 0;
     border: none;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     width: 32px;
     height: 32px;
     cursor: pointer;
     background-image: url(../../../images/Close_Icon.svg);
+    justify-self: end;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    grid-column: 2/3;
 }
 
 .popup__close:hover {
@@ -15,8 +19,12 @@
 
 @media (max-width: 767px) {
     .popup__close {
+        margin-bottom: 16px;
+        margin-left: 0;
+        margin-right: 19px;
         width: 20px;
         height: 20px;
-        padding: 0;
+        grid-column: 1/1;
+        background-size: 20px 20px;
     }
 }
