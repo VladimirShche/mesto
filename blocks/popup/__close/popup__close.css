@@ -7,10 +7,9 @@
     height: 32px;
     cursor: pointer;
     background-image: url(../../../images/Close_Icon.svg);
-    justify-self: end;
-    margin-bottom: 8px;
-    margin-left: 8px;
-    grid-column: 2/3;
+    position: absolute;
+    left: 863px;
+    top: 155px;
 }
 
 .popup__close:hover {

@@ -1,9 +1,6 @@
 .popup {
     margin: 0;
     position: fixed;
-    grid-template-rows: min-content;
-    justify-content: center;
-    margin-top: 155px;
     background-color: rgba(0,0,0,0.5);
     top: 0;
     left: 0;
