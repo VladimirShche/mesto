@@ -1,6 +1,8 @@
 .popup__container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    max-width: 1280px;
+    max-height: 720px;
 }
 
 @media (max-width: 767px) {
