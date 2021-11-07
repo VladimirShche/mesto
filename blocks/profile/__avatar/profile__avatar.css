@@ -7,10 +7,10 @@
 
 @media (max-width: 767px) {
     .profile__avatar {
+        grid-template-columns: min-content;
+        grid-template-rows: repeat(2, min-content);
         align-items: center;
         justify-content: center;
-        grid-template-columns: 282px;
-        grid-template-rows: repeat(3, min-content);
         margin-left: 19px;
         margin-right: 19px;
     }
