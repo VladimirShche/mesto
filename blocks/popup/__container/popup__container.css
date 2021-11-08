@@ -1,19 +1,11 @@
 .popup__container {
     display: flex;
-    margin: auto;
     flex-direction: column;
     background-color: #FFFFFF;
-    margin-top: 195px;
     max-width: 430px;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     position: relative;
-}
-
-@media (max-width: 767px) {
-    .popup__container {
-        margin-top: 123px;
-    }
 }
 
 @media (max-width: 479px) {
