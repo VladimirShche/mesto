@@ -25,6 +25,40 @@ const initialCards = [
     }
 ];
 
+//переменная для элементов
+const elements = document.querySelector('.elements');
+//кнопка добавления
+const profileAdd = document.querySelector('.profile__add');
+//переменные для инпута
+
+//переменные для отправки формы
+
+let editing = null;
+
+function main() {
+	initialCards.forEach((element) => {
+		renderItem(element);
+	})
+
+	formButton.addEventListener('click', handleSubmit);
+}
+
+function renderItem(text) {
+	//1. Создавать разметку
+
+	const htmlElement = itemTemplate.content.cloneNode(true);
+
+	//2. Заменять в разметке текст
+	htmlElement.querySelector('.item__text').innerText = text;
+
+	//2.5 Навесить события
+	setListeners(htmlElement);
+
+	//3. Вставлять разметку в наш dom
+	list.appendChild(htmlElement);
+
+}
+
 // Находим форму в DOM
 let formElement = document.querySelector('.popup__form');
 // Находим поля формы в DOM
