@@ -28,10 +28,11 @@ const initialCards = [
 //переменная для элементов
 const elements = document.querySelector('.elements');
 //кнопка добавления
-const profileAdd = document.querySelector('.profile__add');
+const profileButton = document.querySelector('.profile__add');
 //переменные для инпута
-
+const itemTemplate = document.querySelector('.card__tamplate');
 //переменные для отправки формы
+const formPopup
 
 let editing = null;
 
@@ -43,19 +44,27 @@ function main() {
 	formButton.addEventListener('click', handleSubmit);
 }
 
-function renderItem(text) {
+function handleSubmit () {
+    const siteValue = siteCard.value;
+    const srcValue = srcCard.value;
+
+    addCard(siteValue, srcValue);
+}
+
+function addCard(name, link) {
 	//1. Создавать разметку
 
 	const htmlElement = itemTemplate.content.cloneNode(true);
 
 	//2. Заменять в разметке текст
-	htmlElement.querySelector('.item__text').innerText = text;
+	htmlElement.querySelector('.element__text').innerText = card.name;
+    htmlElement.querySelector('#image-element').src = card.link;
 
 	//2.5 Навесить события
 	setListeners(htmlElement);
 
 	//3. Вставлять разметку в наш dom
-	list.appendChild(htmlElement);
+	elementsItem.appendChild(htmlElement);
 
 }
 
