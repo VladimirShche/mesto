@@ -25,14 +25,10 @@ const initialCards = [
     }
 ];
 
-//переменная для элементов
-const elements = document.querySelector('.elements');
-//кнопка добавления
-const profileButton = document.querySelector('.profile__add');
-//переменные для инпута
-const itemTemplate = document.querySelector('.card__tamplate');
-//переменные для отправки формы
-const formPopup
+const list = document.querySelector('.elements');
+const formButton = document.querySelector('.popup__submit');
+const formInput = document.querySelector('.popup__field');
+const itemTemplate = document.querySelector('.card_template');
 
 let editing = null;
 
@@ -44,29 +40,54 @@ function main() {
 	formButton.addEventListener('click', handleSubmit);
 }
 
-function handleSubmit () {
-    const siteValue = siteCard.value;
-    const srcValue = srcCard.value;
-
-    addCard(siteValue, srcValue);
-}
-
-function addCard(name, link) {
+function renderItem(text) {
 	//1. Создавать разметку
 
 	const htmlElement = itemTemplate.content.cloneNode(true);
 
-	//2. Заменять в разметке текст
-	htmlElement.querySelector('.element__text').innerText = card.name;
-    htmlElement.querySelector('#image-element').src = card.link;
-
+	//2. Заменять в разметке текст и картинку
+	htmlElement.querySelector('.element__text').innerName = text;
+    htmlElement.querySelector('.element__pic').innerLink = text;
 	//2.5 Навесить события
 	setListeners(htmlElement);
 
 	//3. Вставлять разметку в наш dom
-	elementsItem.appendChild(htmlElement);
+	list.appendChild(htmlElement);
 
 }
+
+function setListeners(element) {
+	// element.querySelector('.delete').addEventListener('click', handleDelete);
+	element.querySelector('.profile__add').addEventListener('click', handleEdit);
+}
+
+function handleEdit(event) {
+	editing = event.target.closest('.element');
+
+	const text = editing.querySelector('.element__text').textContent;
+    const link = editing.querySelector('.element__pic').textContent;
+	formInput.value = text;
+	formButton.value = "Изменить";
+
+	formButton.removeEventListener('click', handleSubmit);
+	formButton.addEventListener('click', handleEditConfirm);
+}
+
+function handleDelete(event) {
+	event.target.closest('.list__item').remove();
+}
+
+function handleDuplicate(event) {
+	const text = event.target.closest('.list__item').querySelector('.item__text').textContent;
+	renderItem(text);
+}
+
+
+
+
+
+
+
 
 // Находим форму в DOM
 let formElement = document.querySelector('.popup__form');
