@@ -25,10 +25,10 @@ const initialCards = [
     }
 ];
 
-const list = document.querySelector('.elements');
+const elements = document.querySelector('.elements');
 const formButton = document.querySelector('.popup__submit');
 const formInput = document.querySelector('.popup__field');
-const itemTemplate = document.querySelector('.card_template');
+const itemTemplate = document.querySelector('.card__template');
 
 let editing = null;
 
@@ -46,8 +46,8 @@ function renderItem(text) {
 	const htmlElement = itemTemplate.content.cloneNode(true);
 
 	//2. Заменять в разметке текст и картинку
-	htmlElement.querySelector('.element__text').innerName = text;
-    htmlElement.querySelector('.element__pic').innerLink = text;
+	htmlElement.querySelector('.element__text').textContent = text.name;
+    htmlElement.querySelector('.element__pic').src = text.link;
 	//2.5 Навесить события
 	setListeners(htmlElement);
 
@@ -56,33 +56,41 @@ function renderItem(text) {
 
 }
 
-function setListeners(element) {
-	// element.querySelector('.delete').addEventListener('click', handleDelete);
-	element.querySelector('.profile__add').addEventListener('click', handleEdit);
+// function setListeners(element) {
+// 	// element.querySelector('.delete').addEventListener('click', handleDelete);
+// 	element.querySelector('.profile__add').addEventListener('click', handleEdit);
+// }
+
+// function handleEdit(event) {
+// 	editing = event.target.closest('.element');
+
+// 	const text = editing.querySelector('.element__text').textContent;
+//     const link = editing.querySelector('.element__pic').textContent;
+// 	formInput.value = text;
+// 	formButton.value = "Изменить";
+
+// 	formButton.removeEventListener('click', handleSubmit);
+// 	formButton.addEventListener('click', handleEditConfirm);
+// }
+
+// function handleDelete(event) {
+// 	event.target.closest('.list__item').remove();
+// }
+
+// function handleDuplicate(event) {
+// 	const text = event.target.closest('.list__item').querySelector('.item__text').textContent;
+// 	renderItem(text);
+// }
+
+function handleSubmit() {
+	//1. взять значение из инпута
+	const textValue= textContentText.value;
+    const srcValue = srcText.value;
+	//2. отрисовать строку с этим текстом
+	renderItem(myValue);
 }
 
-function handleEdit(event) {
-	editing = event.target.closest('.element');
-
-	const text = editing.querySelector('.element__text').textContent;
-    const link = editing.querySelector('.element__pic').textContent;
-	formInput.value = text;
-	formButton.value = "Изменить";
-
-	formButton.removeEventListener('click', handleSubmit);
-	formButton.addEventListener('click', handleEditConfirm);
-}
-
-function handleDelete(event) {
-	event.target.closest('.list__item').remove();
-}
-
-function handleDuplicate(event) {
-	const text = event.target.closest('.list__item').querySelector('.item__text').textContent;
-	renderItem(text);
-}
-
-
+main();
 
 
 
