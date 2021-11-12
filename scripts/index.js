@@ -64,24 +64,37 @@ const cards = document.querySelector('.elements');
 const popupOpenAddButtonElement = document.querySelector('.profile__add');
 const popupAddElement = document.querySelector('.popup_type_add');
 const popupCloseAddButtonElement = popupAddElement.querySelector('.popup__close');
+const popupAddButtonElement = popupAddElement.querySelector('.popup__submit');
 
 const openPopupAdd = function () {
     popupAddElement.classList.add('popup_is-opened');
-    nameInput.value = nameProf.textContent;
-    jobInput.value = jobProf.textContent;
+
 };
 const closePopupAdd = function () {
     popupAddElement.classList.remove('popup_is-opened');
 };
 
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
-function formSubmitHandler(evt) {
-    evt.preventDefault();
-    nameProf.textContent = nameInput.value;
-    jobProf.textContent = jobInput.value;
-    closePopupAdd();
+
+function addcard(nameValue, linkValue) {
+    const cardTemplate = document.querySelector('#card-template').content;
+    const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
+
+    cardElement.querySelector('.element__text').textContent = nameValue;
+    cardElement.querySelector('.element__pic').src = linkValue;
+
+    cards.append(cardElement);
 }
+
+popupAddButtonElement.addEventListener('click', function () {
+    const name = document.querySelector('popup__field_type_place');
+    const link = document.querySelector('.popup__field_type_link');
+
+    addcard(name.value, link.value);
+
+    name.value = '';
+    link.value = '';
+});
+
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler);
