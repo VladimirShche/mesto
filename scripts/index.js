@@ -9,6 +9,7 @@ const popupElement = document.querySelector('.popup');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close');
 const popupOpenButtonElement = document.querySelector('.profile__edit');
 
+
 const openPopup = function () {
     popupElement.classList.add('popup_is-opened');
     nameInput.value = nameProf.textContent;
@@ -65,6 +66,7 @@ const popupOpenAddButtonElement = document.querySelector('.profile__add');
 const popupAddElement = document.querySelector('.popup_type_add');
 const popupCloseAddButtonElement = popupAddElement.querySelector('.popup__close');
 const popupAddButtonElement = popupAddElement.querySelector('.popup__submit');
+const cardTemplate = document.querySelector('#card-template').content;
 
 const openPopupAdd = function () {
     popupAddElement.classList.add('popup_is-opened');
@@ -75,15 +77,25 @@ const closePopupAdd = function () {
 };
 
 
-function addcard(nameValue, linkValue) {
-    const cardTemplate = document.querySelector('#card-template').content;
-    const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
+// function addcard(nameValue, linkValue) {
+//     const cardTemplate = document.querySelector('#card-template').content;
+//     const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
 
-    cardElement.querySelector('.element__text').textContent = nameValue;
-    cardElement.querySelector('.element__pic').src = linkValue;
+//     cardElement.querySelector('.element__text').textContent = nameValue;
+//     cardElement.querySelector('.element__pic').src = linkValue;
 
-    cards.append(cardElement);
-}
+//     cards.append(cardElement);
+// }
+
+initialCards.forEach(function (element) {
+    const cardElement = cardTemplate.cloneNode(true);
+
+    cardElement.querySelector('.element__text').textContent = element.name;
+    cardElement.querySelector('.element__pic').src = element.link;
+
+    cards.append(cardElement)
+});
+
 
 popupAddButtonElement.addEventListener('click', function () {
     const name = document.querySelector('popup__field_type_place');

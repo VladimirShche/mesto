@@ -1,0 +1,16 @@
+.popup__field_type_place {
+    margin: 0;
+    padding: 0;
+    min-width: 358px;
+    height: 27px;
+    margin-left: 36px;
+    margin-top: 46px;
+}
+
+@media (max-width: 767px) {
+    .popup__field_type_place {
+        min-width: 238px;
+        margin-left: 22px;
+        margin-top: 75px;
+    }
+}
