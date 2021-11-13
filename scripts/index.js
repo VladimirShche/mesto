@@ -65,8 +65,10 @@ const cards = document.querySelector('.elements');
 const popupOpenAddButtonElement = document.querySelector('.profile__add');
 const popupAddElement = document.querySelector('.popup_type_add');
 const popupCloseAddButtonElement = popupAddElement.querySelector('.popup__close');
-const popupAddButtonElement = popupAddElement.querySelector('.popup__submit');
-const cardTemplate = document.querySelector('#card-template').content;
+const formAddButtonElement = popupAddElement.querySelector('.popup__submit');
+const cardTemplate = document.querySelector('.card_template').content;
+const formPlace = document.querySelector('.popup__field_type_place');
+const formLink = document.querySelector('.popup__field_type_link');
 
 const openPopupAdd = function () {
     popupAddElement.classList.add('popup_is-opened');
@@ -77,16 +79,6 @@ const closePopupAdd = function () {
 };
 
 
-// function addcard(nameValue, linkValue) {
-//     const cardTemplate = document.querySelector('#card-template').content;
-//     const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
-
-//     cardElement.querySelector('.element__text').textContent = nameValue;
-//     cardElement.querySelector('.element__pic').src = linkValue;
-
-//     cards.append(cardElement);
-// }
-
 initialCards.forEach(function (element) {
     const cardElement = cardTemplate.cloneNode(true);
 
@@ -96,19 +88,34 @@ initialCards.forEach(function (element) {
     cards.append(cardElement)
 });
 
+function main() {
+	initialCards.forEach((element) => {
+		renderItem(element); 
+	})
 
-popupAddButtonElement.addEventListener('click', function () {
-    const name = document.querySelector('popup__field_type_place');
-    const link = document.querySelector('.popup__field_type_link');
+	formAddButtonElement.addEventListener('click', handleSubmit);
+}
 
-    addcard(name.value, link.value);
+function addCard(name, link) {
+    const htmlElement = cardTemplate.cloneNode(true);
 
-    name.value = '';
-    link.value = '';
-});
+    htmlElement.querySelector('.element__text').innerText = name;
+    htmlElement.querySelector('.element__pic').src = link;
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', formSubmitHandler);
+    cardTemplate.appendChild(htmlElement);
+}
+
+function handleSubmit() {
+	//1. взять значение из инпута
+	const myPlace = formPlace.value;
+	const myLink = formLink.value;
+
+	//2. отрисовать строку с этим текстом
+	addCard(myPlace, myLink);
+}
+
+
+formAddButtonElement.addEventListener('submit', formSubmitHandler);
 popupOpenAddButtonElement.addEventListener('click', openPopupAdd);
 popupCloseAddButtonElement.addEventListener('click', closePopupAdd);
+
