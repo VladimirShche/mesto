@@ -60,62 +60,56 @@ const initialCards = [
     }
 ];
 
-const content = document.querySelector('.content');
-const cards = document.querySelector('.elements');
-const popupOpenAddButtonElement = document.querySelector('.profile__add');
-const popupAddElement = document.querySelector('.popup_type_add');
-const popupCloseAddButtonElement = popupAddElement.querySelector('.popup__close');
-const formAddButtonElement = popupAddElement.querySelector('.popup__submit');
-const cardTemplate = document.querySelector('.card_template').content;
-const formPlace = document.querySelector('.popup__field_type_place');
-const formLink = document.querySelector('.popup__field_type_link');
+const list = document.querySelector('.elements');
+const itemTemplate = document.querySelector('.card_template');
+const cardPopupElement = document.querySelector('.popup_type_add');
+const addFormElement = cardPopupElement.querySelector('.popup__form');
+const popupFormCloseElement = cardPopupElement.querySelector('.popup__close');
+const popupFormOpenElement = document.querySelector('.profile__add');
+
+const titleInput = addFormElement.querySelector('.popup__field_type_place');
+const linkInput = addFormElement.querySelector('.popup__field_type_link');
+const addFormElementButton = addFormElement.querySelector('.popup__submit');
+
 
 const openPopupAdd = function () {
-    popupAddElement.classList.add('popup_is-opened');
+    cardPopupElement.classList.add('popup_is-opened'); // открытие попапа add
 
 };
 const closePopupAdd = function () {
-    popupAddElement.classList.remove('popup_is-opened');
+    cardPopupElement.classList.remove('popup_is-opened');  // закрытие попапа add
 };
 
 
-initialCards.forEach(function (element) {
-    const cardElement = cardTemplate.cloneNode(true);
+function render() {
+    for (let i = 0; i < initialCards.length; i = i + 1) {
+        const element = initialCards[i];
+        renderItem(element);
+    }
 
-    cardElement.querySelector('.element__text').textContent = element.name;
-    cardElement.querySelector('.element__pic').src = element.link;
+};
+// 
+function renderItem(element) {
+    const htmlElement = itemTemplate.content.cloneNode(true);
 
-    cards.append(cardElement)
-});
+    htmlElement.querySelector('.element__text').textContent = element.name;
+    htmlElement.querySelector('.element__pic').src = element.link;
 
-function main() {
-	initialCards.forEach((element) => {
-		renderItem(element); 
-	})
+    list.prepend(htmlElement);
+};
 
-	formAddButtonElement.addEventListener('click', handleSubmit);
-}
+function Submit(evt) {
+    evt.preventDefault();
+    const myValueTitle = titleInput.value;
+    const myValueLink = linkInput.value;
 
-function addCard(name, link) {
-    const htmlElement = cardTemplate.cloneNode(true);
+    renderItem(myValueTitle, myValueLink);
+    closePopupAdd();
+};
 
-    htmlElement.querySelector('.element__text').innerText = name;
-    htmlElement.querySelector('.element__pic').src = link;
+addFormElement.addEventListener('submit', Submit);
 
-    cardTemplate.appendChild(htmlElement);
-}
+render();
 
-function handleSubmit() {
-	//1. взять значение из инпута
-	const myPlace = formPlace.value;
-	const myLink = formLink.value;
-
-	//2. отрисовать строку с этим текстом
-	addCard(myPlace, myLink);
-}
-
-
-formAddButtonElement.addEventListener('submit', formSubmitHandler);
-popupOpenAddButtonElement.addEventListener('click', openPopupAdd);
-popupCloseAddButtonElement.addEventListener('click', closePopupAdd);
-
+popupFormOpenElement.addEventListener('click', openPopupAdd);
+popupFormCloseElement.addEventListener('click', closePopupAdd);
