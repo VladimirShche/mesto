@@ -66,7 +66,7 @@ const cardPopupElement = document.querySelector('.popup_type_add');
 const addFormElement = cardPopupElement.querySelector('.popup__form');
 const popupFormCloseElement = cardPopupElement.querySelector('.popup__close');
 const popupFormOpenElement = document.querySelector('.profile__add');
-const titleInput = addFormElement.querySelector('.popup__field_type_place');
+const placeInput = addFormElement.querySelector('.popup__field_type_place');
 const linkInput = addFormElement.querySelector('.popup__field_type_link');
 const addFormElementButton = addFormElement.querySelector('.popup__submit');
 
@@ -89,12 +89,20 @@ function render() {
 
 
 function renderItem(element) {
+
     const htmlElement = itemTemplate.content.cloneNode(true);
     htmlElement.querySelector('.element__text').textContent = element.name;
     htmlElement.querySelector('.element__pic').src = element.link;
 
     list.prepend(htmlElement);
+    
+    const likeBtns = document.querySelectorAll('.element__like');
 
+    likeBtns.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            elem.closest('.element__like').classList.toggle('element__like_active');
+        })
+    })
     const cardDeleteBtn = document.querySelectorAll('.element__delete-btn');
 
     cardDeleteBtn.forEach((element) => {
@@ -110,7 +118,7 @@ function renderItem(element) {
 function Submit(evt) {
     evt.preventDefault();
     let card = {
-        name: titleInput.value,
+        name: placeInput.value,
         link: linkInput.value
     }
     renderItem(card);
@@ -120,14 +128,6 @@ function Submit(evt) {
 addFormElement.addEventListener('submit', Submit);
 
 render();
-
-const likeButtons = document.querySelectorAll('.element__like');
-
-likeButtons.forEach((elem) => {
-    elem.addEventListener('click', () => {
-        elem.parentNode.querySelector('.element__like').classList.toggle('element__like_active');
-    })
-})
 
 popupFormOpenElement.addEventListener('click', openPopupAdd);
 popupFormCloseElement.addEventListener('click', closePopupAdd);
