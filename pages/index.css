@@ -36,4 +36,7 @@
 @import url(../blocks/popup/_type/popup_type_edit.css);
 @import url(../blocks/popup/__field/_type/popup__field_type_place.css);
 @import url(../blocks/popup/__field/_type/popup__field_type_link.css);
+@import url(../blocks/element/__delete-btn/element__delete-btn.css);
+@import url(../blocks/element/__like/_active/element__like_active.css);
+
 

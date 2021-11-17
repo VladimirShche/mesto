@@ -66,10 +66,10 @@ const cardPopupElement = document.querySelector('.popup_type_add');
 const addFormElement = cardPopupElement.querySelector('.popup__form');
 const popupFormCloseElement = cardPopupElement.querySelector('.popup__close');
 const popupFormOpenElement = document.querySelector('.profile__add');
-
 const titleInput = addFormElement.querySelector('.popup__field_type_place');
 const linkInput = addFormElement.querySelector('.popup__field_type_link');
 const addFormElementButton = addFormElement.querySelector('.popup__submit');
+
 
 
 const openPopupAdd = function () {
@@ -80,30 +80,40 @@ const closePopupAdd = function () {
     cardPopupElement.classList.remove('popup_is-opened');  // закрытие попапа add
 };
 
-
 function render() {
     for (let i = 0; i < initialCards.length; i = i + 1) {
         const element = initialCards[i];
         renderItem(element);
     }
-
 };
-// 
+
+
 function renderItem(element) {
     const htmlElement = itemTemplate.content.cloneNode(true);
-
     htmlElement.querySelector('.element__text').textContent = element.name;
     htmlElement.querySelector('.element__pic').src = element.link;
 
     list.prepend(htmlElement);
+
+    const cardDeleteBtn = document.querySelectorAll('.element__delete-btn');
+
+    cardDeleteBtn.forEach((element) => {
+        element.addEventListener('click', () => {
+            element.closest('.element').remove();
+        })
+    })
+
 };
+
+
 
 function Submit(evt) {
     evt.preventDefault();
-    const myValueTitle = titleInput.value;
-    const myValueLink = linkInput.value;
-
-    renderItem(myValueTitle, myValueLink);
+    let card = {
+        name: titleInput.value,
+        link: linkInput.value
+    }
+    renderItem(card);
     closePopupAdd();
 };
 
@@ -111,5 +121,15 @@ addFormElement.addEventListener('submit', Submit);
 
 render();
 
+const likeButtons = document.querySelectorAll('.element__like');
+
+likeButtons.forEach((elem) => {
+    elem.addEventListener('click', () => {
+        elem.parentNode.querySelector('.element__like').classList.toggle('element__like_active');
+    })
+})
+
 popupFormOpenElement.addEventListener('click', openPopupAdd);
 popupFormCloseElement.addEventListener('click', closePopupAdd);
+
+
