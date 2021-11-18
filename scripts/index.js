@@ -70,7 +70,7 @@ const placeInput = addFormElement.querySelector('.popup__field_type_place');
 const linkInput = addFormElement.querySelector('.popup__field_type_link');
 const addFormElementButton = addFormElement.querySelector('.popup__submit');
 
-
+let editing = null;
 
 const openPopupAdd = function () {
     cardPopupElement.classList.add('popup_is-opened'); // открытие попапа add
@@ -95,14 +95,7 @@ function renderItem(element) {
     htmlElement.querySelector('.element__pic').src = element.link;
 
     list.prepend(htmlElement);
-    
-    const likeBtns = document.querySelectorAll('.element__like');
 
-    likeBtns.forEach((elem) => {
-        elem.addEventListener('click', () => {
-            elem.closest('.element__like').classList.toggle('element__like_active');
-        })
-    })
     const cardDeleteBtn = document.querySelectorAll('.element__delete-btn');
 
     cardDeleteBtn.forEach((element) => {
@@ -112,8 +105,6 @@ function renderItem(element) {
     })
 
 };
-
-
 
 function Submit(evt) {
     evt.preventDefault();
@@ -125,10 +116,18 @@ function Submit(evt) {
     closePopupAdd();
 };
 
-addFormElement.addEventListener('submit', Submit);
-
 render();
 
+const likeBtns = document.querySelectorAll('.element__like');
+
+likeBtns.forEach((elem) => {
+    elem.addEventListener('click', () => {
+        elem.closest('.element__like').classList.toggle('element__like_active');
+    })
+})
+
+
+addFormElement.addEventListener('submit', Submit);
 popupFormOpenElement.addEventListener('click', openPopupAdd);
 popupFormCloseElement.addEventListener('click', closePopupAdd);
 
